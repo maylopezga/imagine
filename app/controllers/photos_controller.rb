@@ -1,9 +1,11 @@
 class PhotosController < ApplicationController
+  before_action :authenticate_user!, except: [:show,:index]
   def index
     @photos = Photo.all
   end
   def show
     @photo = Photo.find(params[:id])
+    @photo.update_visits_count
   end
   def new
     @photo = Photo.new
@@ -13,7 +15,7 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
   end
   def create
-    @photo = Photo.new(photo_params)
+    @photo = current_user.photos.new(photo_params)
 
     if @photo.save
       redirect_to @photo
