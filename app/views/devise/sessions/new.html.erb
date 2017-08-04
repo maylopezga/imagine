@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-6 col-md-offset-3 font-conten">
       <div class="row">
-        <h1 class="font-conten">Iniciar sesión</h1>
+        <h1 class="font-title">Iniciar sesión</h1>
       </div>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -23,11 +23,11 @@
           </div>
         <% end -%>
 
-        <div class="actions field center font">
+        <div class="actions field center font-button">
           <%= f.submit "Iniciar", class: "btn let be-black" %>
         </div>
       <% end %>
-      <div class="field font">
+      <div class="field font-button">
           <%= render "devise/shared/links" %>
       </div>
 

@@ -1,0 +1,20 @@
+<div class="col-md-6 col-md-offset-3 font-conten">
+  <div class="row">
+    <h1 class="font-title"> <strong>Publicaciones</strong></h1>
+  </div>
+  <div class="container">
+    <% @photos.each do |photo|%>
+    <div class="field">
+      <h1 class="font-conten"><strong> <%= link_to photo.title, photo %> </strong> </h1>
+    </div>
+    <div class="field font-conten", style="text-align: left;">
+      <%= photo.body%>
+    </div>
+    <div id="ellink", class="filed font-button center">
+      <%= link_to "Eliminar", photo, class:"btn be-black", method: :delete %>
+    </div>
+    <%end%>
+
+  </div>
+
+</div>

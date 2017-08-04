@@ -1,0 +1,17 @@
+<div class="col-md-6 col-md-offset-3 font-conten">
+  <div class="row">
+    <h1 class="font-title"> <strong><%= @photo.title %></strong></h1>
+  </div>
+  <div class="container">
+
+    <div class="field font-conten", style="text-align: left;">
+      <%= @photo.body%>
+    </div>
+    <div id="ellink", class="filed font-button center">
+      <%= link_to "Editar", edit_photo_path(@photo), class:"btn be-black" %>
+    </div>
+
+
+  </div>
+
+</div>
