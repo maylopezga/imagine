@@ -16,7 +16,7 @@
         <div class="field">
           <%= label_tag(:password, "Contraseña") %>
           <% if @minimum_password_length %>
-          <em class="font">(<%= @minimum_password_length %> characters minimum)</em>
+          <em class="font">(<%= @minimum_password_length %> caracteres mínimo)</em>
           <% end %><br />
           <%= f.password_field :password, autocomplete: "off", placeholder:"Contraseña", class:"form-control" %>
         </div>
