@@ -12,6 +12,14 @@
     <%= label_tag(:body, "Contenido") %><br />
     <%= f.text_area :body, placeholder: "Contenido de la publicación", style:"height:250px;", class:"form-control"%>
   </div>
+
+  <div class="row">
+     <div class="col-xs-12 form-group">
+       <%= f.label :status %>
+       <%= f.select :status, options_for_select(@statuses.collect { |s| [s[0].humanize, s[0]] }, selected: @photo.status), {} , class: "form-control" %>
+     </div>
+   </div>
+
   <div class="actions field center font-button">
     <%= f.submit "Publicar", class: "btn let be-black" %>
   </div>

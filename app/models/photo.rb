@@ -3,6 +3,7 @@ class Photo < ApplicationRecord
   validates :title, presence: true, uniqueness: true
   validates :body, presence: true, length: {minimum:10}
   before_create :set_visits_count
+  enum status: [:publico, :privado, :compartido]
 
   def update_visits_count
     #self.save if self.visit_count.nil?

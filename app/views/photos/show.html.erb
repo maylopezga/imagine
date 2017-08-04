@@ -9,8 +9,12 @@
       <%end%>
     </div>
     <div class="field font-conten", style="text-align: left;">
-      <strong>Visitas:</strong> 
+      <strong>Visitas:</strong>
       <%= @photo.visit_count%>
+    </div>
+    <div class="field font-conten", style="text-align: left;">
+      <strong>Estado:</strong>
+      <%= @photo.status.humanize%>
     </div>
     <div class="field font-conten", style="text-align: left;">
       <%= @photo.body%>

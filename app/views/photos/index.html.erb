@@ -10,6 +10,10 @@
     <div class="field font-conten", style="text-align: left;">
       <%= photo.body%>
     </div>
+    <div class="field font-conten", style="text-align: left;">
+      <strong>Estado:</strong>
+      <%= photo.status.humanize%>
+    </div>
     <div id="ellink", class="filed font-button center">
       <%= link_to "Eliminar", photo, class:"btn be-black", method: :delete %>
     </div>
