@@ -1,0 +1,71 @@
+html, body{
+  margin: 0px;
+
+
+}
+
+.btn{
+
+  background-color: inherit;
+  border: none;
+  text-transform: uppercase;
+  text-decoration-color: black;
+  font-size: 1.2em;
+  padding: 10px 12px;
+}
+
+a,a:visited{
+  color: inherit !important;
+  text-decoration: none;
+}
+#logo{
+  font-size: 1.9em;
+}
+
+.let{
+  color: white;
+}
+.be-black{
+  background-color: black;
+}
+
+.white{
+  color: #ECF0F1;
+}
+.field{
+  margin-top: 1em;
+}
+.center{
+  text-align: center;
+}
+
+.font{
+  font-family: 'Indie Flower', cursive;
+  font-size: 20px;
+}
+
+.font-conten{
+  font-family: 'Indie Flower', cursive;
+  font-size: 40px;
+}
+.form-control{
+  border: none;
+  outline: none;
+  width: 100%;
+  display: block;
+  padding: 4px 0px;
+  font-size: 0.5em;
+  color: black;
+}
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+.no-margin{
+  margin: 0px;
+}
+
+
+.large-padding{
+  padding: 10px 7px;
+}
