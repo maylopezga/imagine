@@ -4,18 +4,13 @@ class PhotosController < ApplicationController
   def index
     @photos = Photo.all
     if user_signed_in?
-
         @po = Photo.where('status = ? OR status = ?', 2,0)
-        #@po1 = Photo.where('status = ?', 2)
-        @photos = @po #+ @po1
-         puts @photos
+        @photos = @po
     else
       @po1 = Photo.where('status = ?', 0)
       @photos = @po1
-      puts "Publico"
     end
-    # @photos = Photo.all
-    # @statuses = Photo.statuses
+
   end
 
   def show
@@ -44,8 +39,11 @@ class PhotosController < ApplicationController
 
   def destroy
     @photo = Photo.find(params[:id])
-    @photo.destroy
-    redirect_to photos_path
+    if current_user.id == @photo.user_id
+      @photo.destroy
+      redirect_to photos_path
+    end
+
   end
 
   def update

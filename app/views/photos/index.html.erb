@@ -13,37 +13,37 @@
     <h1 class="font-title"> <strong>Publicaciones</strong></h1>
   </div>
   <div class="row">
-  <div class="field">
-    <div id="respuesta">
+    <div class="field">
+      <div id="respuesta">
+      </div>
     </div>
-  </div>
-  <p>-----------------------------------------</p><br>
+    <p>-----------------------------------------</p><br>
   </div>
 
   <div class="row">
     <% if user_signed_in? %>
-    <h1 class="font-conten"> Bienvenido <%= current_user.email %></h1>
+      <h1 class="font-conten"> Bienvenido <%= current_user.email %></h1>
     <% end %>
-      <p>-----------------------------------------</p><br>
+    <p>-----------------------------------------</p><br>
   </div>
   <div class="container">
     <% @photos.each do |photo|%>
-    <div class="field">
-      <h1 class="font-conten"><strong> <%= link_to photo.title, photo %> </strong> </h1>
-    </div>
-    <div class="field font-conten", style="text-align: left;">
-      <%= photo.body%>
-    </div>
-    <div class="field font-conten", style="text-align: left;">
-      <strong>Estado:</strong>
-      <%= photo.status.humanize%>
-    </div>
-    <div id="ellink", class="filed font-button center">
-      <%= link_to "Eliminar", photo, class:"btn be-black", method: :delete %>
-    </div>
+      <div class="field">
+        <h1 class="font-conten"><strong> <%= link_to photo.title, photo %> </strong> </h1>
+      </div>
+      <div class="field font-conten", style="text-align: left;">
+        <%= photo.body%>
+      </div>
+      <div class="field font-conten", style="text-align: left;">
+        <strong>Estado:</strong>
+        <%= photo.status.humanize%>
+      </div>
+      <div id="ellink", class="filed font-button center">
+        <% if user_signed_in? %>
+          <%= link_to "Eliminar", photo, class:"btn be-black", method: :delete %>
+        <% end %>
+      </div>
+      <p>-----------------------------------------</p><br>
     <%end%>
-
   </div>
-
-
 </div>
