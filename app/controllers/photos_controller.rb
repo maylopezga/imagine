@@ -1,9 +1,22 @@
 class PhotosController < ApplicationController
   before_action :authenticate_user!, except: [:show,:index]
+
   def index
     @photos = Photo.all
-    @statuses = Photo.statuses
+    if user_signed_in?
+        @po = Photo.where('status = ?', 2)
+        @po1 = Photo.where('status = ?', 0)
+        @photos = @po + @po1
+         puts @photos
+    else
+      @po1 = Photo.where('status = ?', 0)
+      @photos = @po1
+      puts "Publico"
+    end
+    # @photos = Photo.all
+    # @statuses = Photo.statuses
   end
+
   def show
     @photo = Photo.find(params[:id])
     @photo.update_visits_count
