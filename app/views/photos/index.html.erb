@@ -17,14 +17,14 @@
       <div id="respuesta">
       </div>
     </div>
-    <p>-----------------------------------------</p><br>
+    <p class="center">-----------------------------------------</p><br>
   </div>
 
   <div class="row">
     <% if user_signed_in? %>
       <h1 class="font-conten"> Bienvenido <%= current_user.email %></h1>
     <% end %>
-    <p>-----------------------------------------</p><br>
+    <p class="center">-----------------------------------------</p><br>
   </div>
   <div class="col-md-10 col-md-offset-1">
     <% @photos.each do |photo|%>
