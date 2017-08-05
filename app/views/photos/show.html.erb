@@ -1,7 +1,16 @@
-<div class="col-md-6 col-md-offset-3 font-conten">
-  <div class="row">
+<div class="col-md-8 col-md-offset-2 font-conten">
+  <div class="row center">
     <h1 class="font-title"> <strong><%= @photo.title %></strong></h1>
   </div>
+  <% if @photo.cover? %>
+    <div class=" gallery field font-conten", style="text-align: left;">
+      <%= image_tag @photo.cover.url() %>
+    </div>
+  <% else %>
+    <div class=" gallery field font-conten", style="text-align: left;">
+      <%= image_tag "imgdefault.jpg" %>
+    </div>
+  <% end %>
   <div class="container">
     <div class="field font-conten", style="text-align: left;">
       <% unless @photo.user.nil? %>
@@ -19,8 +28,10 @@
     <div class="field font-conten", style="text-align: left;">
       <%= @photo.body%>
     </div>
-    <div id="ellink", class="filed font-button center">
-      <%= link_to "Editar", edit_photo_path(@photo), class:"btn be-black" %>
+    <div class="field2">
+      <div id="ellink", class="filed font-button center">
+        <%= link_to "Editar", edit_photo_path(@photo), class:"btn be-black" %>
+      </div>
     </div>
 
 

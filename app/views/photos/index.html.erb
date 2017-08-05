@@ -8,7 +8,7 @@
 </div>
 
 
-<div class="col-md-6 col-md-offset-3 font-conten">
+<div class="col-md-8 col-md-offset-2 font-conten">
   <div class="row">
     <h1 class="font-title"> <strong>Publicaciones</strong></h1>
   </div>
@@ -26,9 +26,18 @@
     <% end %>
     <p>-----------------------------------------</p><br>
   </div>
-  <div class="container">
+  <div class="col-md-10 col-md-offset-1">
     <% @photos.each do |photo|%>
-      <div class="field">
+      <% if photo.cover? %>
+        <div class=" gallery field font-conten", style="text-align: left;">
+          <%= image_tag photo.cover.url() %>
+        </div>
+      <% else %>
+        <div class=" gallery field font-conten", style="text-align: left;">
+          <%= image_tag "imgdefault.jpg" %>
+        </div>
+      <% end %>
+      <div class="field center">
         <h1 class="font-conten"><strong> <%= link_to photo.title, photo %> </strong> </h1>
       </div>
       <div class="field font-conten", style="text-align: left;">

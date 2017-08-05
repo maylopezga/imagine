@@ -4,6 +4,12 @@
       <%= message %>
     </div>
   <% end %>
+  <div class="field2">
+    <%= label_tag( "Imagen de la publicación") %><br />
+    <div class="field">
+      <%=f.file_field :cover, placeholder: "Imagen", class:"font-button btn let be-black"%>
+    </div>
+  </div>
   <div class="field">
     <%= label_tag(:title, "Título de la publicación") %><br />
     <%=f.text_field :title, placeholder: "Título", class:"form-control"%>

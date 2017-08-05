@@ -5,8 +5,7 @@ class PhotosController < ApplicationController
     @photos = Photo.all
     if user_signed_in?
         @po = Photo.where('status = ? OR status = ?', 2,0)
-        if 
-        end
+
         @photos = @po
     else
       @po1 = Photo.where('status = ?', 0)
@@ -66,7 +65,7 @@ class PhotosController < ApplicationController
 
   private
   def photo_params
-    params.require(:photo).permit(:title,:body,:status)
+    params.require(:photo).permit(:title,:body,:status, :cover)
 
   end
 end
