@@ -1,0 +1,14 @@
+<div class="col-md-6 col-md-offset-3 font-conten">
+  <div class="container">
+    <div class="field">
+      <h1 class="font-title"><strong> <%= link_to photo.title, photo %> </strong> </h1>
+    </div>
+    <div class="field font-conten", style="text-align: left;">
+      <%= photo.body%>
+    </div>
+    <div class="field font-conten", style="text-align: left;">
+      <strong>Estado:</strong>
+      <%= photo.status.humanize%>
+    </div>
+  </div>
+</div>

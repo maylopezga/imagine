@@ -1,10 +1,33 @@
+<div class="field">
+  <%= form_tag "home/create", method: :get, remote: true, id:"search-form", class:"center font-content" do%>
+    <%= text_field_tag :keyword, nil, placeholder: "Buscar por..."  %>
+    <%= content_tag :button, type: :submit, class:"btn be-black white font-button" do%>
+    Buscar
+    <%end%>
+  <%end%>
+</div>
+
+
 <div class="col-md-6 col-md-offset-3 font-conten">
   <div class="row">
     <h1 class="font-title"> <strong>Publicaciones</strong></h1>
   </div>
+  <div class="row">
+  <div class="field">
+    <div id="respuesta">
+    </div>
+  </div>
+  <p>-----------------------------------------</p><br>
+  </div>
+
+  <div class="row">
+    <% if user_signed_in? %>
+    <h1 class="font-conten"> Bienvenido <%= current_user.email %></h1>
+    <% end %>
+      <p>-----------------------------------------</p><br>
+  </div>
   <div class="container">
     <% @photos.each do |photo|%>
-      
     <div class="field">
       <h1 class="font-conten"><strong> <%= link_to photo.title, photo %> </strong> </h1>
     </div>
@@ -21,5 +44,6 @@
     <%end%>
 
   </div>
+
 
 </div>

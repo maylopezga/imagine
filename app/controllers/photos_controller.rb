@@ -4,9 +4,10 @@ class PhotosController < ApplicationController
   def index
     @photos = Photo.all
     if user_signed_in?
-        @po = Photo.where('status = ?', 2)
-        @po1 = Photo.where('status = ?', 0)
-        @photos = @po + @po1
+
+        @po = Photo.where('status = ? OR status = ?', 2,0)
+        #@po1 = Photo.where('status = ?', 2)
+        @photos = @po #+ @po1
          puts @photos
     else
       @po1 = Photo.where('status = ?', 0)
