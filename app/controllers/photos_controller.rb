@@ -5,6 +5,8 @@ class PhotosController < ApplicationController
     @photos = Photo.all
     if user_signed_in?
         @po = Photo.where('status = ? OR status = ?', 2,0)
+        if 
+        end
         @photos = @po
     else
       @po1 = Photo.where('status = ?', 0)

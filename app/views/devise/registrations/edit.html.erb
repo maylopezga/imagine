@@ -44,14 +44,12 @@
       <div class="field">
         <p>-----------------------------------------</p><br>
       </div>
-      <div class="field">
         <div class="row">
           <h1 class="font-title">Cancelar cuenta </h1>
         </div>
-      </div>
       <div class="field center">
-        <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:" btn let be-black font-button" %></p>
-        <%= link_to "Back", :back %>
+        <p>Infeliz? <%= button_to "Cancelar", registration_path(resource_name), data: { confirm: "Estas seguro?" }, method: :delete, class:" btn let be-black font-button" %></p>
+        <%= link_to "Volver", :back %>
       </div>
     </div>
   </div>
