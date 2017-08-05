@@ -26,6 +26,11 @@ class PhotosController < ApplicationController
   def edit
     @photo = Photo.find(params[:id])
     @statuses = Photo.statuses
+    if current_user.id == @photo.user_id
+      puts "Puede editar"
+    else
+      redirect_to @photo
+    end
   end
 
   def create
@@ -47,13 +52,14 @@ class PhotosController < ApplicationController
   end
 
   def update
-    @photo = Photo.find(params[:id])
-    @statuses = Photo.statuses
-    if @photo.update(photo_params)
-      redirect_to @photo
-    else
-      render :edit
-    end
+
+      @photo = Photo.find(params[:id])
+      @statuses = Photo.statuses
+      if @photo.update(photo_params)
+        redirect_to @photo
+      else
+        render :edit
+      end
   end
 
   private
