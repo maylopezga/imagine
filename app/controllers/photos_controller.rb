@@ -4,9 +4,21 @@ class PhotosController < ApplicationController
   def index
     @photos = Photo.all
     if user_signed_in?
-        @po = Photo.where('status = ? OR status = ?', 2,0)
+      # @photos.each do |p|
+      #   if current_user.id == p.user_id
+      #     @photo = p
+      #   end
+      #   n = p.status
+      #   if n == "publico" || n == "compartido"
+      #     @photo = p
+      #     puts "enttro a atupoeh"
+      #   end
+      # end
+      # @photos = @photo
+      #
+      @po = Photo.where('status = ? OR status = ? OR user_id = ?', 2,0, current_user.id)
+      @photos = @po
 
-        @photos = @po
     else
       @po1 = Photo.where('status = ?', 0)
       @photos = @po1

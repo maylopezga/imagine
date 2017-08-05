@@ -4,22 +4,18 @@ class HomeController < ApplicationController
     @pho = Photo.where("title LIKE ? OR body LIKE ?",word,word)
 
     if user_signed_in?
+
       @pho.each do |p|
         puts p
         n = p.status
         puts n
         puts "va para el primer if"
-        if  p.user_id == current_user.id
+        if  p.user_id == current_user.id || n == "compartido" || n== "publico"
           @photos = p
           puts "entro"
+
         end
-        if n == "compartido"
-          @photos = p
-        end
-        if  n == "publico"
-          @photos = p
-          puts "entro2"
-        end
+        
       end
     else
       @pho.each do |p|
