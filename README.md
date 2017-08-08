@@ -1,6 +1,6 @@
 # README
 
-By: Mayerli López - maye.lopez16@gmail.com
+By: Mayerli López - maye.lopez16@gmail.com ~ mlopez12@eafit.edu.co
 
 DESARROLLO
 
